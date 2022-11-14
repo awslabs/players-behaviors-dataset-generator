@@ -240,3 +240,37 @@ pip install -e .
 ```
 pip install click numpy pandas matplotlib
 ```
+
+## Publish on PyPI
+
+The package is automatically published ot https://pypi.org when a commit is pushed on github with a tag.
+
+## Test Publish on PyPI
+
+1. Create an account on [PyPI](https://pypi.org/account/register/)
+1. Create an account on [Test PYPI](https://test.pypi.org/manage/projects/)
+1. Create or edit a ~/.pypirc file:
+```
+[distutils]
+  index-servers =
+    pypi
+    pypitest
+  
+  [pypi]
+  repository=https://pypi.python.org/pypi
+  username=__token__
+  
+  [pypitest]
+  repository=https://test.pypi.org/legacy/
+  username=__token__
+
+```
+1. Create a PyPI account and create a token
+1. Build the package:
+```
+python3 -m build 
+```
+1. Upload the package:
+```
+python setup.py sdist upload -r pypitest
+```

@@ -8,18 +8,19 @@ setuptools.setup(
     version="0.1.0",
     author="Frederic Nowak",
     author_email="fredenow@amazon.com",
-    description="A simple comand line tool to create game events data for analytics and machine learning use cases",
+    description="A simple comand line tool to create game datasets for analytics and machine learning use cases",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    keywords='game machine learning analytics dataset generator player behavior',
-    url="https://github.com/aws-labs/players-behaviors-dataset-generator",
+    keywords='game machine learning analytics dataset generator player behaviour',
+    url="https://github.com/awslabs/players-behaviors-dataset-generator",
     project_urls={
-        "Project Tracker": "https://github.com/aws-labs/players-behaviors-dataset-generator/projects",
-        "Issue Tracker": "https://github.com/aws-labs/players-behaviors-dataset-generator/issues"
+        "Project Tracker": "https://github.com/awslabs/players-behaviors-dataset-generator/projects",
+        "Issue Tracker": "https://github.com/awslabs/players-behaviors-dataset-generator/issues"
     },
     classifiers=[
+        "Topic :: Utilities",
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT-0 License",
+        "License :: OSI Approved :: MIT No Attribution License (MIT-0)",
         "Operating System :: OS Independent",
     ],
     install_requires=[
