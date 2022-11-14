@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="players-behaviors-dataset-generator",
-    version="0.2.0",
+    version="0.1.0",
     author="Frederic Nowak",
     author_email="fredenow@amazon.com",
     description="A simple comand line tool to create game events data for analytics and machine learning use cases",
