@@ -2,14 +2,6 @@
 
 This project provides a tool to synthetize game dataset to be used in Analytics and Machine Learning examples and demos.
 
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This library is licensed under the MIT-0 License. See the [LICENSE](LICENSE) file.
-
 ## Install
 
 'pbdg' is a python package available at http://pypi.org/aws/pbdg
@@ -206,3 +198,11 @@ Generated file content (![features.csv](docs/features.csv)):
 | 56d4b533b42740e990ce0aac3bdfcfc6 | 2022_06_08 | 2 | churner | 78252.746837 | 2 | False | 2 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 15081.716635 | 22274.939247 | 0.0 | 0.0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 15081.716635 | 22274.939247 | 0 | 0 | 0 | 0 | 15081.716635 | 22274.939247 | 0 | 0 | 50229.649963 | 50263.69293 | 0.0 | 0.0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 50229.649963 | 50263.69293 | 0 | 0 | 0 | 0 | 50229.649963 | 50263.69293 | 0 | 0 |
 | 16ca20d622c04f96971ac359cd8f4151 | 2022_06_08 | 2 | churner | 161992.623939 | 3 | False | 2 | 2 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 0 | 0 | 0 | 3 | 3 | 0 | 0 | 18328.872222 | 25516.40685 | 73935.322063 | 81085.45611 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 65664.355502 | 72839.42327 | 0 | 0 | 0 | 0 | 65664.355502 | 72839.42327 | 0 | 0 | 53215.18547 | 53190.74877 |  |  | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 77421.168823 | 77431.646079 | 0 | 0 | 0 | 0 | 77421.168823 | 77431.646079 | 0 | 0 |
 | e14c495dc6544134bd51e7eb7bfd91f4 | 2022_06_08 | 2 | churner | 89544.033403 | 2 | False | 1 | 2 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 0 | 0 | 2 | 2 | 0 | 0 | 76617.072141 | 42513.73832 | 80601.831075 | 0.0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 35409.451608 | 42513.73832 | 0 | 0 | 0 | 0 | 35409.451608 | 42513.73832 | 0 | 0 |  | 58311.032016 |  | 0.0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 58276.37583 | 58311.032016 | 0 | 0 | 0 | 0 | 58276.37583 | 58311.032016 | 0 | 0 |
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the [LICENSE](LICENSE) file.
