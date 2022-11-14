@@ -107,7 +107,9 @@ pip install click numpy pandas matplotlib
 git log <last_tag>..HEAD --oneline
 ```
 
-2. Commit the [CHANGELOG.md](CHANGELOG.md) file and push it to the origin
+2. Change the package version in the [setup.py](setup.py) file.
+
+3. Commit the [CHANGELOG.md](CHANGELOG.md) file and push it to the origin
 
 ```
 git add -A
@@ -115,14 +117,14 @@ git commit -m "Update CHANGELOG.md for version v0.1.0"
 git push
 ```
 
-3. Create a tag on the main branch (ex: v0.1.0) matching the release version you have used in the change log and push it to the origin
+4. Create a tag on the main branch (ex: v0.1.0) matching the release version you have used in the change log and push it to the origin
 
 ```
 git tag v0.1.0
 git push origin --tags
 ```
 
-4. Create a release from the Github interface and add the version [CHANGELOG.md](CHANGELOG.md) content into the release description
+5. Create a release from the Github interface and add the version [CHANGELOG.md](CHANGELOG.md) content into the release description
 
 ## Test Publish on PyPI
 
