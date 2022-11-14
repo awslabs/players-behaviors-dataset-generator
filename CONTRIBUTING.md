@@ -59,29 +59,34 @@ If you discover a potential security issue in this project we ask that you notif
 See the [LICENSE](LICENSE) file for our project's licensing. We will ask you to confirm the licensing of your contribution.
 
 
-## Development
+## Setup a development environment
 
 You can have a look at the Python documentation about [virutal environments](https://docs.python.org/3/library/venv.html).
 
-#### Install virtual environment
+1. Fork the repository
+
+GitHub provides additional document on [forking a repository](https://help.github.com/articles/fork-a-repo/) and
+[creating a pull request](https://help.github.com/articles/creating-a-pull-request/).
+
+2. Install virtual environment
 
 ```
 python3 -m venv venv    
 ```
 
-#### Activate virtual environment
+3. Activate virtual environment
 
 ```
 source venv/bin/activate   
 ```
 
-#### Deactivate virtual environment
+4. Deactivate virtual environment
 
 ```
 (venv) > deactivate   
 ```
 
-#### Install package from source
+5. Install package locally from source
 
 ```
 pip install -e .
@@ -93,16 +98,38 @@ pip install -e .
 pip install click numpy pandas matplotlib
 ```
 
+
 ## Publish on PyPI
 
-The package is automatically published ot https://pypi.org when a commit is pushed on github with a tag.
+1. Update the [CHANGELOG.md](CHANGELOG.md) file with a comprehensive list of the changes made since the last release. You can list the commit from the last release.
 
+```
+git log <last_tag>..HEAD --oneline
+```
+
+2. Commit the [CHANGELOG.md](CHANGELOG.md) file and push it to the origin
+
+```
+git add -A
+git commit -m "Update CHANGELOG.md for version v0.1.0"
+git push
+```
+
+3. Create a tag on the main branch (ex: v0.1.0) matching the release version you have used in the change log and push it to the origin
+
+```
+git tag v0.1.0
+git push origin --tags
+```
+
+4. Create a release from the Github interface and add the version [CHANGELOG.md](CHANGELOG.md) content into the release description
 
 ## Test Publish on PyPI
 
-1. Create an account on [PyPI](https://pypi.org/account/register/)
-2. Create an account on [Test PYPI](https://test.pypi.org/manage/projects/)
-3. Create or edit a ~/.pypirc file:
+1. Create an account on [Test PYPI](https://test.pypi.org/manage/projects/)
+
+2. Create or edit a ~/.pypirc file:
+
 ```
 [distutils]
   index-servers =
@@ -118,12 +145,17 @@ The package is automatically published ot https://pypi.org when a commit is push
   username=__token__
 
 ```
-4. Create a PyPI account and create a token
-5. Build the package:
+
+3. Create a PyPI account and create a token
+
+4. Build the package:
+
 ```
 python3 -m build 
 ```
-6. Upload the package:
+
+5. Upload the package:
+
 ```
 python setup.py sdist upload -r pypitest
 ```
