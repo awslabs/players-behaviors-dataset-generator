@@ -57,3 +57,73 @@ If you discover a potential security issue in this project we ask that you notif
 ## Licensing
 
 See the [LICENSE](LICENSE) file for our project's licensing. We will ask you to confirm the licensing of your contribution.
+
+
+## Development
+
+You can have a look at the Python documentation about [virutal environments](https://docs.python.org/3/library/venv.html).
+
+#### Install virtual environment
+
+```
+python3 -m venv venv    
+```
+
+#### Activate virtual environment
+
+```
+source venv/bin/activate   
+```
+
+#### Deactivate virtual environment
+
+```
+(venv) > deactivate   
+```
+
+#### Install package from source
+
+```
+pip install -e .
+```
+
+#### Install package dependencies
+
+```
+pip install click numpy pandas matplotlib
+```
+
+## Publish on PyPI
+
+The package is automatically published ot https://pypi.org when a commit is pushed on github with a tag.
+
+
+## Test Publish on PyPI
+
+1. Create an account on [PyPI](https://pypi.org/account/register/)
+2. Create an account on [Test PYPI](https://test.pypi.org/manage/projects/)
+3. Create or edit a ~/.pypirc file:
+```
+[distutils]
+  index-servers =
+    pypi
+    pypitest
+  
+  [pypi]
+  repository=https://pypi.python.org/pypi
+  username=__token__
+  
+  [pypitest]
+  repository=https://test.pypi.org/legacy/
+  username=__token__
+
+```
+4. Create a PyPI account and create a token
+5. Build the package:
+```
+python3 -m build 
+```
+6. Upload the package:
+```
+python setup.py sdist upload -r pypitest
+```
