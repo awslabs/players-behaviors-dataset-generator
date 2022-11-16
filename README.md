@@ -4,10 +4,10 @@ This project provides a tool to synthetize game dataset to be used in Analytics 
 
 ## Install
 
-'pbdg' is a python package available at http://pypi.org/aws/pbdg
+'pbdg' is a python package available at https://pypi.org/project/players-behaviors-dataset-generator/
 
 ```
-pip install pbdg
+pip install players-behaviors-dataset-generator
 ```
 
 ## Basic usage
