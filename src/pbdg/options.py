@@ -75,6 +75,25 @@ class WeightedDictionary:
                 last_key = key
         return last_key
 
+class PurchaseOptions:
+    """A purchase options class."""
+    def __init__(self, amount_per_spend=0, amount_per_spend_sigma=0,
+                 spend_time_per_session=0, spend_time_per_session_sigma=0, spend_per_visit_ratio=0):
+        self.amount_per_spend = amount_per_spend
+        self.amount_per_spend_sigma = amount_per_spend_sigma
+        self.spend_time_per_session = spend_time_per_session
+        self.spend_time_per_session_sigma = spend_time_per_session_sigma
+        self.spend_per_visit_ratio = spend_per_visit_ratio
+
+    def amount(self):
+        return int(max(0, random.gauss(self.amount_per_spend, self.amount_per_spend_sigma)))
+
+    def spend_count(self):
+        return int(max(0, random.gauss(self.spend_time_per_session, self.spend_time_per_session_sigma)))
+
+    def must_spend(self):
+        return random.random() < self.spend_per_visit_ratio
+
 class StageOptions:
     """A stage options class."""
     def __init__(self, duration_mu, duration_sigma, duration_ratio,
@@ -113,10 +132,12 @@ class PlayerOptions:
     """A player options class."""   
     def __init__(self, player_type, 
                         sessions_options,
+                        purchase_options,
                         stages_options,
                         lifetime):
         self.player_type = player_type
         self.sessions_options = sessions_options
+        self.purchase_options = purchase_options
         self.stages_options = stages_options
         self.lifetime = lifetime
 
@@ -135,7 +156,6 @@ class GameOptions:
 def default_game_options(players, days):
 
     # sessions options
-
     morning_session_options = SessionOptions(
         timedelta(hours=7), # session time mean
         timedelta(minutes=30), # session time standard deviation
@@ -164,8 +184,24 @@ def default_game_options(players, days):
         timedelta(minutes=1) # session duration standard deviation
     )
 
-    # stages options
+    # purchase options
+    hardcore_buyer_options = PurchaseOptions(
+        amount_per_spend=8,
+        amount_per_spend_sigma=3,
+        spend_time_per_session=3,
+        spend_time_per_session_sigma=1,
+        spend_per_visit_ratio=0.8
+    )
+    casual_buyer_options = PurchaseOptions(
+        amount_per_spend=2,
+        amount_per_spend_sigma=1,
+        spend_time_per_session=1,
+        spend_time_per_session_sigma=1,
+        spend_per_visit_ratio=0.2
+    )
+    no_buyer_options = PurchaseOptions()
 
+    # stages options
     strong_stage_options = StageOptions(
         timedelta(minutes=1), # stage duration mean
         timedelta(seconds=10), # stage duration standard deviation
@@ -191,7 +227,6 @@ def default_game_options(players, days):
     )
 
     # players options
-
     bot_player = PlayerOptions(
         'bot',
         {
@@ -243,7 +278,10 @@ def default_game_options(players, days):
                 afternoon_session_options: 1.0,
                 night_session_options: 1.0
             }
-        }, 
+        },
+        WeightedDictionary({
+            no_buyer_options: 1
+        }),
         WeightedDictionary({
             strong_stage_options: 1.0
         }),
@@ -289,7 +327,12 @@ def default_game_options(players, days):
             WeekDay.SUNDAY: {
                 afternoon_session_options: 0.8
             }
-        }, 
+        },
+        WeightedDictionary({
+            no_buyer_options: 0.1,
+            casual_buyer_options: 0.6,
+            hardcore_buyer_options: 1.0
+        }),
         WeightedDictionary({
             strong_stage_options: 0.3,
             medimum_stage_options: 0.8,
@@ -322,7 +365,12 @@ def default_game_options(players, days):
                 noon_session_options: 0.5,
                 night_session_options: 0.5
             }
-        }, 
+        },
+        WeightedDictionary({
+            hardcore_buyer_options: 0.2,
+            casual_buyer_options: 0.7,
+            no_buyer_options: 1
+        }),
         WeightedDictionary({
             strong_stage_options: 0.1,
             medimum_stage_options: 0.5,
@@ -353,7 +401,12 @@ def default_game_options(players, days):
             WeekDay.SUNDAY:  {
                 night_session_options: 1.0
             }
-        }, 
+        },
+        WeightedDictionary({
+            hardcore_buyer_options: 0.1,
+            casual_buyer_options: 0.5,
+            no_buyer_options: 0.6
+        }),
         WeightedDictionary({
             strong_stage_options: 0.05,
             medimum_stage_options: 0.3,

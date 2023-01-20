@@ -12,11 +12,26 @@ class WeekDay(Enum):
     SATURDAY = 5
     SUNDAY = 6
 
+class PlatformType(Enum):
+    PLAYSTATION_5 = auto()
+    NINTENDO_SWITCH = auto()
+    MICROSOFT_XBOX_ONE = auto()
+    PC = auto()
+    IOS = auto()
+    ANDROID = auto()
+
+    @classmethod
+    def names(cls):
+        return list(map(lambda e: e.name, cls))
+
 class PlayerEventType(Enum):
+    USER_REGISTRATION = auto()
     BEGIN_SESSION = auto()
     END_SESSION = auto()
     BEGIN_STAGE = auto()
     END_STAGE = auto()
+    IAP_TRANSACTION = auto()
+    IAP_ITEMS_LIST = auto()
 
     @classmethod
     def names(cls):
@@ -25,13 +40,16 @@ class PlayerEventType(Enum):
 class PlayerEventField(Enum):
     id = auto()
     event_type = auto()
+    platform_type = auto()
     timestamp = auto()
     cohort_id = auto()
     player_id = auto()
     player_type = auto()
     session_id = auto()
     stage_id = auto()
-    stage_score = auto()
+    stage_score = auto(),
+    item_value = auto(),
+
 
     @classmethod
     def names(cls):

@@ -5,3 +5,28 @@ venv
 build
 *.dat
 *.pyz
+
+# VSCode history plugin
+.vscode/.history/
+
+# Local state files & OS specifics
+.DS_Store
+node_modules/
+lerna-debug.log
+dist/
+pack/
+.BUILD_COMPLETED
+.local-npm/
+.tools/
+coverage/
+.nyc_output
+.nycrc
+.LAST_BUILD
+*.sw[a-z]
+*~
+.idea
+*.iml
+
+# Generated content
+events.csv
+events.png
