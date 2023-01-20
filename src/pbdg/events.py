@@ -283,8 +283,8 @@ class GameActivity:
                     PlatformType.PLAYSTATION_5.name: 0.1,
                     PlatformType.MICROSOFT_XBOX_ONE.name: 0.3,
                     PlatformType.NINTENDO_SWITCH.name: 0.5,
-                    PlatformType.IOS.name: 1.0,
                     PlatformType.ANDROID.name: 0.7,
+                    PlatformType.IOS.name: 1.0,
                 })[random.random()]
 
                 player_id = uuid.uuid4()

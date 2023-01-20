@@ -280,8 +280,6 @@ def default_game_options(players, days):
             }
         },
         WeightedDictionary({
-            hardcore_buyer_options: 0,
-            casual_buyer_options: 0,
             no_buyer_options: 1
         }),
         WeightedDictionary({
@@ -331,9 +329,9 @@ def default_game_options(players, days):
             }
         },
         WeightedDictionary({
-            hardcore_buyer_options: 0.7,
-            casual_buyer_options: 0.4,
-            no_buyer_options: 0.1
+            no_buyer_options: 0.1,
+            casual_buyer_options: 0.6,
+            hardcore_buyer_options: 1.0
         }),
         WeightedDictionary({
             strong_stage_options: 0.3,
